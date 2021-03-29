@@ -1,0 +1,38 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  h1 {
+    text-align: center;
+  }
+  #card {
+    width: 700px;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #b97070;;
+  }
+  #avatar {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  #text {
+    width: 340px;
+  }
+  #name {
+    margin-top: 0.5em;
+  }
+  
+  #link {
+    text-decoration: none;
+    color: #000;
+    transition: color .4s ease-in-out;
+  }
+  #link:hover {
+    color: #6d5bb1e8;
+  }
