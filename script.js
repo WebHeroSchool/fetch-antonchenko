@@ -1,5 +1,5 @@
 let user;
-let href = document.location.herif;
+let href = document.location.href;
 const userAva = document.getElementById('avatar');
 const userName = document.getElementById('name');
 const userBio = document.getElementById('bio');
@@ -26,6 +26,5 @@ const presentCard = function (obj) {
 
 fetch(apilink)
 .then(res =>  res.json())
-.then(obj => user = Object.assign({}, obj))
-.then(user => createCard(user))
+.then(user => obj(user))
 .catch(err => console.error(err));
