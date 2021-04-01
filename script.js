@@ -13,8 +13,6 @@ const createUrl = function () {
     return 'http://api.github.com/users/' + username;
 }
 
-let apilink = createUrl();
-
 const presentCard = function (obj) {
   userAva.src = obj.avatar_url;
   userLink.innerHTML = obj.name;
