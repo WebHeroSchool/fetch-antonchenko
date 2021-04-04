@@ -12,7 +12,7 @@ const presentCard = function (obj) {
   else userBio.innerHTML = "this user haven't bio in profile";
 }
 
-fetch("http://api.github.com/users/Persvot")
+fetch("http://api.github.com/users/")
 .then(res =>  res.json())
 .then(user => presentCard(user))
 .catch(err => console.error(err));
