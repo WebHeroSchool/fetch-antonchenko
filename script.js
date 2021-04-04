@@ -5,7 +5,7 @@ const dateHtml = document.querySelector('.date');
 const userAva = document.getElementById('avatar');
 const userName = document.getElementById('name');
 const userBio = document.getElementById('bio');
-const userLink = document.gerElementById('link');
+const userLink = document.getElementById('link');
 
 const getPreloader = new Promise ((resolve, reject) => {
 setTimeout(() => {
@@ -14,15 +14,15 @@ setTimeout(() => {
 });
 
 const getTime = new Promise ((resolve, reject) => {
-  fetch ("http://api.github.com/users/")
+  fetch ("http://api.github.com/users/antonchenko")
   .then((res) => res.json())
   .then((time) => {
     resolve(time)
   })
 });
 
- function presentCard(obj, time) {
-  dateHtml.innerHTML = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds()
+ function presentCard(obj, date) {
+  dateHtml.innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
   userAva.src = obj.avatar_url;
   userLink.innerHTML = obj.name;
   userBio.href = obj.html_url;
@@ -30,7 +30,7 @@ const getTime = new Promise ((resolve, reject) => {
   else userBio.innerHTML = "this user haven't bio in profile";
 }
 
-  Promise.all([getPreloader, getTime])
+  Promise.all([getTime, getPreloader])
   .then(([date, time]) => {
    presentCard(date, time)
    preloader.style.display = 'none'
