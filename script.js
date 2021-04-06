@@ -30,6 +30,7 @@ const getTime = new Promise ((resolve, reject) => {
   else userBio.innerHTML = "this user haven't bio in profile";
 }
 
+
   Promise.all([getTime, getPreloader])
   .then(([date, time]) => {
    presentCard(date, time)
